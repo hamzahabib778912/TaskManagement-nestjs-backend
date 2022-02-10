@@ -13,7 +13,9 @@ export class User{
     @Column()
     password:string;
 
-    @OneToMany(type=>Task,task=>task.user,{eager:true})
+    @OneToMany(_type=>Task,task=>task.user,{eager:true})
     tasks :Task[];
 
+    //arrow function in argument is the type of the property, hwo to access this from other side(relation)
+    // eager true means whebenever we get a user, we'' gte its tasks as well
 }

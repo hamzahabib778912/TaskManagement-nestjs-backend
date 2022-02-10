@@ -16,8 +16,8 @@ description:string;
 @Column()
 status:TaskStatus;
 
-@ManyToOne(type=>User,user=>user.tasks,{eager:false})
-@Exclude({toPlainOnly:true})
+@ManyToOne(type=>User,(user)=>user.tasks,{eager:false})
+@Exclude({toPlainOnly:true}) // whenever want to print this, fetch this. We'll exclude this property
 user:User
 
 }
